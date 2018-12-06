@@ -20,7 +20,7 @@ echo "moving dnsmansq config file"
 	sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
 
 echo "Creating dnsmansq config file"
-	sudo cp dnsmansq.conf /etc/dnsmasq.conf
+	sudo cp dnsmasq.conf /etc/dnsmasq.conf
 	
 	
 echo "Creating intetface"
@@ -57,6 +57,7 @@ echo "Allow hostapd in ufw rules"
 	sudo ufw allow to any port 53
 	sudo ufw allow to any port 67 proto udp
 	sudo ufw allow to any port 68 proto udp
+	sudo ufw allow from 192.168.0.10/24
 
 echo "Creating iptabele rules"
 	sudo iptables -t nat -A POSTROUTING -o ppp0 -j MASQUERADE
