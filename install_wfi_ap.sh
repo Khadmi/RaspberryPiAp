@@ -35,7 +35,9 @@ echo "Configuring dhcpcd"
 echo "Creating path to hostapd config"
 	#sudo echo "DAEMON_CONF=\"/etc/hostapd/hostapd.conf\"" >> /etc/default/hostapd
 	sudo sed -i "/DAEMON_CONF/c\ DAEMON_CONF=\"/etc/hostapd/hostapd.conf\""  /etc/default/hostapd
-
+	
+echo "forwarding  ipv4"	
+	sudo sed -i "/net.ipv4.ip_forward/c\net.ipv4.ip_forward=1"  /etc/sysctl.conf
 
 echo "Writing udev rules....."
 	#echo 'SUBSYSTEM=="net", ACTION=="add", DRIVERS=="rtl8192cu", ATTR{type}=="1", NAME="wlan0"' >> /lib/udev/rules.d/70-persistent-network.rules
