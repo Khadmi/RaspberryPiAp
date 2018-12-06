@@ -16,6 +16,8 @@ echo "Installing hostapd and dnsmansq"
 echo "Creating hostapd config file"
 	sudo cp hostapd.conf /etc/hostapd/hostapd.conf
 
+echo "moving dnsmansq config file"
+	sudo mv /etc/dnsmasq.conf /etc/dnsmasq.conf.orig 
 
 echo "Creating dnsmansq config file"
 	sudo cp dnsmansq.conf /etc/dnsmasq.conf
