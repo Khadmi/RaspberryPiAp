@@ -6,6 +6,9 @@ echo "--------------------------------"
 echo "Your syetem need internet"
 echo "Is internet connection OK: y/n"
 
+echo "updating"
+	sudo apt-get update
+
 echo "Installing hostapd and dnsmansq"
 	sudo apt-get install hostapd dnsmasq
 
