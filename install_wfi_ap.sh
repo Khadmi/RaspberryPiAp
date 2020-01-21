@@ -78,6 +78,7 @@ echo "Creating iptabele rules"
 	sudo sh -c "iptables-save > /etc/iptables.ipv4.nat"
 	sudo iptables-restore < /etc/iptables.ipv4.nat
 
+	echo "sudo iptables-restore < /etc/iptables.ipv4.nat" > /etc/rc.local
 
 echo "WiFi AP creation done"
 echo "Now connect your device and enjoy browing...."
